@@ -2,7 +2,7 @@
 """
 Created on Thu Jun  4 09:58:55 2020
 
-@author: Dell
+@author: Zeel
 """
 
 from flask import Flask, render_template, request
@@ -178,4 +178,4 @@ def query():
              
     
 if __name__ == '__main__':
-    app.run(port='5000')
+    app.run(host='0.0.0.0', debug=True)
