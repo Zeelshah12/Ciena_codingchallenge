@@ -1,6 +1,5 @@
 flask
 requests
-json
 plotly
 gunicorn
 Jinja2
