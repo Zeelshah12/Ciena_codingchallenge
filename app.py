@@ -22,6 +22,7 @@ result=""
 @app.route('/', methods = ['GET'])
 def index():
     global result
+    result=""
     result= result + 'Processing default request\n'
     return render_template('zoomindex.html', result=result)
     
