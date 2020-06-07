@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jun  7 15:40:16 2020
-
-@author: Dell
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Thu Jun  4 09:58:55 2020
 
 @author: Zeel
@@ -87,9 +80,8 @@ class SINGLE:
             y = yScale)
      
             data = [trace]
-            graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
-            return render_template('zoomindex.html', graphJSON=graphJSON, result=result)        
-    
+           graphJSON_single = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+            return render_template('zoomindex.html', graphJSON_single=graphJSON_single, result=result) 
 class stop:
     @app.route('/stop', methods = ['POST'])
     def stop():
