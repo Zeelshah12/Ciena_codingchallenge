@@ -2,14 +2,7 @@
 """
 Created on Sun Jun  7 10:00:00 2020
 
-@author: Dell
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  4 09:58:55 2020
-
-@author: Dell
+@author: Zeel
 """
 
 from flask import Flask, render_template, request
