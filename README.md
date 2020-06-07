@@ -7,7 +7,10 @@ The app is successfully deployed on heroku platform. You can visit the web page 
 
 ## Installation Guidelines
 
-You need to install all the requirements specified in requirements.txt file with the help of pip install command. For example, pip install flask. Also, for graph rendering on frontend, pip install plotly command was used.
+You need to install all the requirements specified in requirements.txt file with the help of "pip install command". You need Python3 for running this web app on your system. You can install requirements by using "pip install -r requirements.txt" command. Or, you can use the following commands seperately:-
+* pip install flask
+* pip install requests
+* pip install plotly 
 
 After installing all the necessary requirements, change the main function of app.py as app.run(port='5000'). This is for running the application on your localhost on port number 5000. Run app.py file from your editor and it will start a development server. You can redirect to http://127.0.0.1:5000/ or http://localhost:5000/. 
 
