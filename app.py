@@ -80,7 +80,7 @@ class SINGLE:
             y = yScale)
      
             data = [trace]
-           graphJSON_single = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+            graphJSON_single = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
             return render_template('zoomindex.html', graphJSON_single=graphJSON_single, result=result) 
 class stop:
     @app.route('/stop', methods = ['POST'])
