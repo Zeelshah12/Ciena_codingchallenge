@@ -50,15 +50,15 @@
     </div>
 	<br>
  <div class = "form_container">
-	<form style="float:left" action="https://zeelosaflaskapp.herokuapp.com/start" method="POST"> 
+	<form style="float:left" action="http://127.0.0.1:5000/start" method="POST"> 
 			<button class="button">Start</button>
 	</form>
 
-	<form style="float:left" action="https://zeelosaflaskapp.herokuapp.com/stop" method="POST">
+	<form style="float:left" action="http://127.0.0.1:5000/stop" method="POST">
 		<button class="button stopbutton">Stop</button>
 	</form>
 	
-	<form action="https://zeelosaflaskapp.herokuapp.com/single" method="POST">
+	<form action="http://127.0.0.1:5000/single" method="POST">
 		<button class="button singlebutton">Single</button>
 	</form>
 	</div>
@@ -73,7 +73,7 @@
 <div class = "container"> {{stop_output}} </div>
 <br>
 
-<form action="https://zeelosaflaskapp.herokuapp.com/query" method="POST">
+<form action="http://127.0.0.1:5000/query" method="POST">
 		<label for="query">Submit Query</label>
 		<input type="text" id="query" name="query" value="ECHO/Ciena">
 		<button class="go">Go</button>
@@ -92,33 +92,42 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<script>
 	var layout = {
-					title: "Graph",
-					xaxis: {
-								title: "THz",
-								titlefont: {
-											family: "Courier New, monospace",
-											size: 18,
-											color: "#7f7f7f"
-											}
-							},
-					yaxis: {
-								title: "dBm",
-								titlefont: {
-											family: "Courier New, monospace",
-											size: 18,
-											color: "#7f7f7f"
-											}
-							}
+			title: "Graph",
+			xaxis: {
+				 title: "THz",
+				 titlefont: {
+					      family: "Courier New, monospace",
+					       size: 18,
+					         color: "#7f7f7f"
+                                                },
+			  yaxis: {
+				   title: "dBm",
+				    titlefont: {
+						family: "Courier New, monospace",
+						size: 18,
+						color: "#7f7f7f"
+						}
+				        }
 					};
 	</script>
  
     <script type="text/javascript">
-         
-        var graphs = {{graphJSON | safe}};
-        
-        Plotly.plot('chart',graphs,layout, {scrollZoom: true});        
- 
-    </script>
+        var i;
+         var graphs = {{graphJSON | safe}};
+           for (i=0; i<3; i++){
+		 Plotly.plot('chart',graphs,layout, {scrollZoom: true});
+                 task(i); 
+	     }
+	     function task(i) { 
+		setTimeout(function() { 
+	               }, 8000*i); 
+	} 
+  </script>
+	 
+ <script type="text/javascript"  >
+  var graphs_single = {{graphJSON_single | safe}};
+   Plotly.plot('chart',graphs_single,layout, {scrollZoom: true});
+   </script>
 	
 	
 	
